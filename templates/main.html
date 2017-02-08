@@ -3,12 +3,18 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Учим кодить!</title>
+   <title>How To Code</title>
 
    <!-- CSS Styles -->
    <!-- Подключаем стили, делаем это при помощи функции url_for Фласка, функция принимает на вход название папки и путь/имя файла в этой папке -->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+   <!-- Startup scripts -->
+   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.touchSwipe.min.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 
    <!-- Картинка, которая отображается в заголовке страницы -->
    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -16,55 +22,36 @@
 <body>
    <!-- Main container -->
    <!-- Весь контент видимый пользователем мы заключаем в это контейнер -->
-   <div class="container">
-      <header>
-         <!-- Navigation -->
-         <!-- Панель навигации сверху странички -->
-         <nav class="navbar navbar-inverse navbar-fixed-top1" role="navigation">
-            <div class="container">
+   <div class="nav-container">
+      <div id="sidebar">
+         <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/articles">Статьи</a></li>
+            <li><a href="/video">Видеоуроки</a></li>
+            <li><a href="/contact">Контакты</a></li>
+         </ul>
+      </div>
+      <div class="main-content">
+         <div class="swipe-area"></div>
+            <a href="#" data-toggle=".nav-container" id="sidebar-toggle">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </a>
 
-               <!-- Brand and toggle get grouped for better mobile display -->
-               <!-- Этот кусочек позволяет построить мобильне меню -->
-               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                  </button>
-                  <!-- Эта часть сворачиваться не будет на мобилках -->
-                  <a class="navbar-brand" href="/">Учим кодить!</a>
-               </div>
+         <div class="content">
 
-               <!-- Collect the nav links, forms, and other content for toggling -->
-               <!-- А вот это - то, что сворачивается в мобильне меню -->
-               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                     <li>
-                        <a href="/articles">Статьи тест</a>
-                     </li>
-                     <li>
-                        <a href="/video">Видеоуроки</a>
-                     </li>
-                     <li>
-                        <a href="/contact">Контакты</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </nav>
-      </header>
+            {% block body %}{% endblock %}
 
-      {% block body %}{% endblock %}
+         </div>
 
-      <!-- Вот тут ещё должен быть футер, если хочешь - займись -->
-		<!-- Tim -->
-		<footer>
-			<small>&copy; 2016 Island freedom crew</small>
-		</footer>
-      
+         <footer>
+            <small>&copy; 2016 - 2017 Island of freedom crew</small>
+         </footer>
+
+      </div>
    </div>
-	
+		
    <!-- А тут подключатся будут скрипты, jQuery, Метрику потом забахаем -->
 </body>
 </html>
