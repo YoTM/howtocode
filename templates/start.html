@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+<div class="container">
+   <div class="row">
+      <h1>Хочешь научиться программировать?</h1>
+      <div class="row">
+         <div class="col-xs-12 col-md-6">
+            <img src="{{ url_for('static', filename='images/video.jpg') }}"> <!-- width="480" height="360"-->
+         </div>
+         <div class="col-xc-12 col-md-6">
+            <h2>Но не знаешь, с чего начать...</h2>
+            <p><- Это стартовая, думаю, сюда надо будет привинтить видео презентацию с канала</p>
+            <p>Заходи к нам на сайт, подписывайся на наш канал на <b>youtube</b>, читай <a href="/articles">статьи</a>,
+            смотри <a href="/video">видеоуроки</a>, пиши <a href="/contact">нам</a> на почту или в социальных сетях и
+            следи за обновлениями. То ли ещё будет.
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

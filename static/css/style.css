@@ -1,0 +1,44 @@
+/* Custom styles file */
+/* Файл для наших собственных стилей */
+
+/* Navigation */
+/* Стили навигационного меню */
+
+.navbar {
+	border-radius: 0px;
+	border-bottom-color: white;
+	background-color: black;
+}
+
+/* General styles */
+/* Общие стили */
+
+body {
+	background-color: black;
+	color: white;
+	font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	margin-bottom: 20px;
+	/*font-size: 1.7em;*/ /*Tim*/
+}
+
+/* Tim */
+footer {
+	padding: 5px;
+	margin-top: 5px;
+	text-align: center;
+	border-top: 1px solid white;
+	width: 100%;
+}
+
+img {
+	min-width: 320px;
+	width: 100%;
+}
+
+p {
+	font-size: 1.2em;
+}
